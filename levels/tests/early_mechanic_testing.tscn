@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 27.9824, 25.4509 )
+
+[node name="Test Level" type="Node"]
+
+[node name="Background" type="Polygon2D" parent="."]
+
+polygon = PoolVector2Array( -554.513, -323.792, -365.75, -394.115, -125.17, -395.966, -32.6391, -249.767, 187.584, -196.099, 372.646, -231.261, 426.314, -412.621, 648.388, -445.932, 803.84, -240.514, 779.782, 79.6432, 692.803, 346.132, 487.385, 453.468, 104.307, 484.928, -201.045, 468.273, -408.315, 410.904, -617.434, 281.361, -671.102, 140.714, -665.55, -101.717, -593.376, -273.825 )
+uv = PoolVector2Array(  )
+color = Color( 0.363365, 0.757813, 0.14209, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+motionSpeed = 230.0
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+
+position = Vector2( -268.022, 36.4881 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Collision" type="CollisionShape2D" parent="Obstacle"]
+
+position = Vector2( 3.17781, -1.48811 )
+scale = Vector2( 0.887844, 0.878706 )
+shape = SubResource( 1 )
+
+[node name="Display" type="Polygon2D" parent="Obstacle"]
+
+polygon = PoolVector2Array( -21.9782, 23.5119, -21.9782, -26.4881, 28.0218, -26.4881, 28.0218, 23.5119 )
+uv = PoolVector2Array(  )
+color = Color( 1, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation = 0.0
+invert_enable = false
+invert_border = 100.0
+
+

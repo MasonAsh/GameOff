@@ -1,3 +1,9 @@
 .import/
 .fscache
 *~
+*.csproj
+*.sln
+mono/
+.mono/
+.vs/
+Properties/
