@@ -1,0 +1,30 @@
+[[sequence]]
+type = "set_background"
+background = "Background1"
+
+[[sequence]]
+    type = "dialog"
+
+    [[sequence.dialog]]
+        name = "Jeffrey"
+        speech = [
+            "Hi Bob",
+            "What's your phone number?"
+        ]
+
+    [[sequence.dialog]]
+        name = "Bob"
+        speech = [
+            "Hi Jeffrey",
+            "867-5309"
+        ]
+
+    [[sequence.dialog]]
+        name = "Jeffrey"
+        speech = [
+            "Sweet."
+        ]
+
+[[sequence]]
+type = "set_background"
+background = "Background2"

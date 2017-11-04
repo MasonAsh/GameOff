@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Cutscene.cs" type="Script" id=1]
+[ext_resource path="res://levels/tests/test_cutscene/backgrounds/background.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/DialogBox.cs" type="Script" id=3]
+
+[node name="Cutscene" type="Node"]
+
+script = ExtResource( 1 )
+cutsceneFile = "res://levels/tests/test_cutscene/cutscene.toml"
+autoStart = true
+dialogBoxPath = NodePath("DialogBox")
+
+[node name="background" type="Sprite" parent="."]
+
+position = Vector2( 510, 300 )
+scale = Vector2( 0.66875, 0.66875 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DialogBox" type="Polygon2D" parent="."]
+
+position = Vector2( 520, 540 )
+scale = Vector2( 1.07865, 1 )
+polygon = PoolVector2Array( 50, 570, 50, 510, 900, 510, 900, 570 )
+uv = PoolVector2Array(  )
+color = Color( 0.425781, 0.425781, 0.425781, 0.751373 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( -484.271, -540 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation = 0.0
+invert_enable = false
+invert_border = 100.0
+script = ExtResource( 3 )
+dialogTextPath = NodePath("DialogText")
+dialogNamePath = NodePath("DialogName")
+characterProgressTime = 0.05
+
+[node name="DialogText" type="RichTextLabel" parent="DialogBox"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -399.0
+margin_top = -10.0
+margin_right = 389.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = "Dialog"
+visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode" ]
+
+[node name="DialogName" type="RichTextLabel" parent="DialogBox"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -426.0
+margin_top = -30.0
+margin_right = -386.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = "Name"
+visible_characters = -1
+percent_visible = 1.0
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts" ]
+
+
