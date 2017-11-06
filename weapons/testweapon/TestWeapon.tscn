@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://weapons/scripts/Weapon.cs" type="Script" id=1]
+[ext_resource path="res://weapons/scripts/ProjectileSpawn.cs" type="Script" id=2]
+
+[node name="TestWeapon" type="Node2D"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+projectileSpawnPath = NodePath("ProjectileSpawn")
+
+[node name="Display" type="Polygon2D" parent="."]
+
+polygon = PoolVector2Array( 30, 20, 90, 20, 90, 10, 30, 10 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, -20 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation = 0.0
+invert_enable = false
+invert_border = 100.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+
+position = Vector2( 94.4767, -4.74847 )
+scale = Vector2( 0.09375, 0.09375 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+projectileScenePath = "res://weapons/testweapon/TestProjectile.tscn"
+
+

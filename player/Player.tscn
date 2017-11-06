@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://player/Player.cs" type="Script" id=1]
+[ext_resource path="res://weapons/testweapon/TestWeapon.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,7 +15,9 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-motionSpeed = 140.0
+motionSpeed = 300.0
+
+[node name="TestWeapon" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera" type="Camera2D" parent="."]
 

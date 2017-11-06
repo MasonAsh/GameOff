@@ -24,10 +24,6 @@ texture_rotation = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-
-motionSpeed = 230.0
-
 [node name="Obstacle" type="StaticBody2D" parent="."]
 
 position = Vector2( -268.022, 36.4881 )
@@ -59,5 +55,7 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation = 0.0
 invert_enable = false
 invert_border = 100.0
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
 
 
