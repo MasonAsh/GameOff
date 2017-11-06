@@ -9,9 +9,19 @@ public class Projectile : KinematicBody2D
     [Export]
     private float baseDamage = 50;
 
+    [Export]
+    private float timeTillFree = 5; // Free projectile after this many seconds
+
     public override void _Ready()
     {
         SetProcess(true);
+
+        Timer timer = new Timer();
+        timer.WaitTime = timeTillFree;
+        timer.Connect("timeout", this, "OnTimeout");
+        timer.Start();
+
+        AddChild(timer);
     }
 
     public override void _Process(float delta)
@@ -33,5 +43,10 @@ public class Projectile : KinematicBody2D
 
             QueueFree();
         }
+    }
+
+    public void OnTimeout()
+    {
+        QueueFree();
     }
 }

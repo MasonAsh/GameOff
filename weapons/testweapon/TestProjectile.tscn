@@ -17,6 +17,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Pickable", "Transform" ]
 speed = 700.0
 baseDamage = 50.0
+timeTillFree = 5.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
