@@ -1,10 +1,13 @@
 using Godot;
 using System;
 
-public class Projectile : Node2D
+public class Projectile : KinematicBody2D
 {
     [Export]
     private float speed = 700;
+
+    [Export]
+    private float baseDamage = 50;
 
     public override void _Ready()
     {
@@ -19,6 +22,16 @@ public class Projectile : Node2D
 
         var offset = dir * delta * speed;
 
-        Translate(offset);
+        var collision = MoveAndCollide(offset);
+
+        if (collision != null)
+        {
+            if (collision.Collider.HasMethod("OnHit"))
+            {
+                collision.Collider.Call("OnHit", baseDamage);
+            }
+
+            QueueFree();
+        }
     }
 }

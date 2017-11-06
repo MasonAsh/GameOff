@@ -1,13 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://weapons/scripts/Projectile.cs" type="Script" id=1]
 
-[node name="TestProjectile" type="Polygon2D"]
+[sub_resource type="RectangleShape2D" id=1]
 
-position = Vector2( 0, 5 )
-polygon = PoolVector2Array( -5, -10, 5, -10, 5, 0, -5, 0 )
+custom_solver_bias = 0.0
+extents = Vector2( 5, 5 )
+
+[node name="TestProjectile" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pickable", "Transform" ]
+speed = 700.0
+baseDamage = 50.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+
+[node name="Display" type="Polygon2D" parent="."]
+
+polygon = PoolVector2Array( -5, -5, 5, -5, 5, 5, -5, 5 )
 uv = PoolVector2Array(  )
-color = Color( 0.96875, 0.709031, 0.0189209, 1 )
+color = Color( 1, 0.609375, 0, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -17,7 +36,5 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation = 0.0
 invert_enable = false
 invert_border = 100.0
-script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 
